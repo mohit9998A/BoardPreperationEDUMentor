@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get(
     'django-insecure-dev-only-change-in-production'
 )
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,*').split(',')
 
 # ─── Installed Apps ─────────────────────────────────────────
 INSTALLED_APPS = [
